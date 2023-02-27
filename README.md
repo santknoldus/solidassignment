@@ -1,6 +1,46 @@
 # SOLID Principle Assignment
 
-Problem :
+**Problem :**
+
+```
+class Rectangle {
+    protected int m_width;
+    protected int m_height;
+
+    public void setWidth(int width) {
+        m_width = width;
+    }
+
+    public void setHeight(int height) {
+        m_height = height;
+    }
+
+    public int getWidth() {
+        return m_width;
+    }
+
+    public int getHeight() {
+        return m_height;
+    }
+
+    public int getArea() {
+        return m_width * m_height;
+    }
+}
+
+class Square extends Rectangle {
+    public void setWidth(int width) {
+        m_width = width;
+        m_height = width;
+    }
+
+    public void setHeight(int height) {
+        m_width = height;
+        m_height = height;
+    }
+
+}
+```
 
 
 SetWidth and SetHeight doesn't make sense because setting one would change the other to match it. In this case Square fails the Liskov Substitution Test with Rectangle and the abstraction of having Square inherit from Rectangle is a bad one.
